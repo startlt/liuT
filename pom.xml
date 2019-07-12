@@ -4,11 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
-        <module>common-api</module>
+        <module>happy_comm</module>
         <module>eureka-6001</module>
         <module>consumer-pre</module>
         <module>consumer-back</module>
         <module>provider-category</module>
+        <module>provider-user-8001</module>
     </modules>
 
     <parent>
@@ -19,7 +20,7 @@
     </parent>
 
     <groupId>com.tj</groupId>
-    <artifactId>happy</artifactId>
+    <artifactId>HappySys</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -33,6 +34,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.16.22</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +48,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -54,26 +57,52 @@
                 <scope>import</scope>
             </dependency>
 
+
             <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.45</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.0.31</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+         <!--   <dependency>
                 <groupId>com.tj</groupId>
                 <artifactId>maven-parent-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
+            </dependency>-->
 
 
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
 
     <build>
         <plugins>
